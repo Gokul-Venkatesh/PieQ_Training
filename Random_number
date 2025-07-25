@@ -1,0 +1,36 @@
+import kotlin.random.Random
+
+fun main() {
+    val numArray = IntArray(50)
+	//assigning random values and printing the elements
+    for (i in numArray.indices) {
+        numArray[i] = Random.nextInt(1, 1001)
+    }
+
+    println("Original numArray")
+    for (i in numArray.indices) {
+        println("Index ${i + 1} : ${numArray[i]}")
+    }
+    
+	//converting array to list for deletion 
+    val numList = numArray.toMutableList()
+    
+    //generating index to delete 
+    val Index = mutableSetOf<Int>()
+	while (Index.size < 25) {
+    Index += Random.nextInt(0, 50)
+	}
+    
+    //sorting so no problem occurs while removing the element from list
+	val indicesToDelete = Index.sortedDescending()
+
+	//deleting the elements
+    for (index in indicesToDelete) {
+        numList.removeAt(index)
+    }
+
+    println("\nUpdated numArray ")
+    for (i in numList.indices) {
+        println("Index ${i + 1} : ${numList[i]}")
+    }
+}
