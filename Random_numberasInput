@@ -1,0 +1,27 @@
+import kotlin.random.Random
+
+fun main() {
+    val arr = IntArray(50) { Random.nextInt(1,1001) }
+
+    println("Generated Random Array:")
+    println(arr.joinToString())
+
+    println("Enter how many elements to delete  : ")
+    val size = readln().toInt()
+
+    println("Enter elements to delete:")
+    val list = mutableListOf<Int>()
+    repeat(size) {
+       list += readln().toInt()
+    }
+
+    val filteredlist = arr.toMutableList()
+    filteredlist.removeAll(list)
+
+    println("Array size after deletion : ${filteredlist.size}")
+    
+    println("\nFiltered Array :")
+    for (num in filteredlist) {
+        println(num)
+    }
+}
