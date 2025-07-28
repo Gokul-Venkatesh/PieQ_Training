@@ -1,9 +1,14 @@
-#Kotlin oop with code practice
+# Kotlin OOP Concepts with Examples
 
+This file contains simple and clear examples of object-oriented programming (OOP) principles in Kotlin.
 
+---
 
-##Parameterized and default  constructor
+## 1. Class and Object
 
+### ➤ Parameterized and Default Constructor
+
+```kotlin
 class Person(val name: String = "Unknown", val age: Int = 0) {
     fun greet() {
         println("Hello, my name is $name and I am $age years old.")
@@ -13,15 +18,16 @@ class Person(val name: String = "Unknown", val age: Int = 0) {
 fun main() {
     val person1 = Person("Alice", 25) // Parameterized
     val person2 = Person()            // Default
-
     person1.greet()
     person2.greet()
 }
+```
 
+---
 
-##Encapsulation 
+## 2. Encapsulation
 
-
+```kotlin
 class Student {
     private var grade: Int = 0
 
@@ -41,10 +47,13 @@ fun main() {
     println("Grade: ${s.getGrade()}")
     s.setGrade(150)  // Invalid
 }
+```
 
+---
 
-##Inheritence
+## 3. Inheritance
 
+```kotlin
 open class Animal {
     open fun makeSound() {
         println("Animal makes a sound")
@@ -63,12 +72,15 @@ fun main() {
     a.makeSound()
     d.makeSound()
 }
+```
 
+---
 
-##Polyorphism 
+## 4. Polymorphism
 
-##Function override
+### Function Overriding
 
+```kotlin
 open class Shape {
     open fun draw() {
         println("Drawing a shape")
@@ -92,14 +104,15 @@ fun main() {
     val shape2 = Circle()
     val shape3 = Square()
 
-    shape1.draw()  // Output: Drawing a shape
-    shape2.draw()  // Output: Drawing a circle
-    shape3.draw()  // Output: Drawing a square
+    shape1.draw()
+    shape2.draw()
+    shape3.draw()
 }
+```
 
+### Function Overloading
 
-##Function overload
-
+```kotlin
 class Calculator {
     fun add(a: Int, b: Int): Int {
         return a + b
@@ -120,10 +133,13 @@ fun main() {
     println(calc.add(2.5, 3.6))
     println(calc.add(1, 2, 3))
 }
+```
 
+---
 
-##Abstraction
+## 5. Abstraction
 
+```kotlin
 abstract class Appliance {
     abstract fun turnOn()
     abstract fun turnOff()
@@ -149,9 +165,13 @@ fun main() {
     fan.turnOn()
     fan.turnOff()
 }
+```
 
-##Multiple Interface
+---
 
+##  6. Multiple Interfaces
+
+```kotlin
 interface Engine {
     fun startEngine()
 }
@@ -175,5 +195,5 @@ fun main() {
     myCar.startEngine()
     myCar.playMusic()
 }
-
+```
 
